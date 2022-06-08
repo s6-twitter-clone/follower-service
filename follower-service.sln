@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "follower-service", "follower-service\follower-service.csproj", "{BF56AB85-70AF-4098-A814-61BF25D37499}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF56AB85-70AF-4098-A814-61BF25D37499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF56AB85-70AF-4098-A814-61BF25D37499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF56AB85-70AF-4098-A814-61BF25D37499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF56AB85-70AF-4098-A814-61BF25D37499}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE683A36-D3A5-4B62-BC80-C9E3C2081019}
+	EndGlobalSection
+EndGlobal
