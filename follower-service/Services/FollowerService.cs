@@ -1,16 +1,19 @@
 ﻿using follower_service.Exceptions;
 using follower_service.Interfaces;
 using follower_service.Models;
+using follower_service.Models.Events;
 
 namespace follower_service.Services;
 
 public class FollowerService
 {
     private readonly IUnitOfWork unitOfWork;
+    private readonly IEventService eventService;
 
-    public FollowerService(IUnitOfWork unitOfWork)
+    public FollowerService(IUnitOfWork unitOfWork, IEventService eventService)
     {
         this.unitOfWork = unitOfWork;
+        this.eventService = eventService;
     }
 
 
@@ -95,6 +98,12 @@ public class FollowerService
 
         unitOfWork.Followers.AddFollower(follower, followee);
 
+        eventService.Publish(exchange: "follower-exchange", topic: "follower-added", new AddFollowerEvent
+        {
+            FollowedUserId = followedId,
+            FollowingUserId = followingId
+        });
+
         unitOfWork.Commit();
     }
 
@@ -108,6 +117,12 @@ public class FollowerService
         var follower = GetById(followingId, followedId);
 
         unitOfWork.Followers.Remove(follower);
+
+        eventService.Publish(exchange: "follower-exchange", topic: "follower-deleted", new DeleteFollowerEvent
+        {
+            FollowedUserId = followedId,
+            FollowingUserId = followingId
+        });
 
         unitOfWork.Commit();
     }
