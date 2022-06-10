@@ -54,6 +54,8 @@ metadata:
         app: "twidditcluster-58fc"
     annotations:
         kubernetes.io/ingress.class: addon-http-application-routing
+        ingress.kubernetes.io/ssl-redirect: "false"
+        nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
     rules:
         - host: twiddit.bdc33b62f0d9413db518.uksouth.aksapp.io
