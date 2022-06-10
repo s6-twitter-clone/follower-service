@@ -42,9 +42,9 @@ jobs:
       with:
         namespace: default
         manifests: |
-          manifests/follower-db.yml
-          manifests/follower-service.yml
-          manifests/rabbitmq.yml
+          manifests/follower-db.yaml
+          manifests/follower-service.yaml
+          manifests/rabbitmq.yaml
         images: |
           twiddit.azurecr.io/twidditcluster:${{ github.sha }}
         imagepullsecrets: |
