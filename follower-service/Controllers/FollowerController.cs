@@ -18,6 +18,7 @@ namespace follower_service.Controllers
         }
 
         [HttpGet("{id}/followers")]
+        [Authorize]
         public IEnumerable<UserDTO> GetFollowers(string id)
         {
             return followerService.GetFollowersById(id).Select(x => new UserDTO
@@ -28,6 +29,7 @@ namespace follower_service.Controllers
         }
 
         [HttpGet("{id}/followers/{followerId}")]
+        [Authorize]
         public FollowerDTO GetFollower(string id, string followerId)
         {
             var follower = followerService.GetById(followerId, id);

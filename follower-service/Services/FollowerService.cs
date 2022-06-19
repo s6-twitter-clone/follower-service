@@ -96,6 +96,13 @@ public class FollowerService
             throw new BadRequestException($"User with id '{followedId}' doesn't exist.");
         }
 
+
+        if(unitOfWork.Followers.GetFollowerById(followingId, followedId) is not null)
+        {
+            throw new BadRequestException($"User with id '{followingId}' is already following user with id '{followedId}'.");
+        }
+
+
         unitOfWork.Followers.AddFollower(follower, followee);
 
         eventService.Publish(exchange: "follower-exchange", topic: "follower-added", new AddFollowerEvent

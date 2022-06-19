@@ -14,7 +14,7 @@ public class UserService
         this.unitOfWork = unitOfWork;
     }
 
-    User GetById(string id)
+    public User GetById(string id)
     {
         var user = unitOfWork.Users.GetById(id);
 
