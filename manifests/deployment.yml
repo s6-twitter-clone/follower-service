@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "twiddit-3f49"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "twiddit-3f49"
+  template:
+    metadata:
+      labels:
+        app: "twiddit-3f49"
+    spec:
+      containers:
+        - name: "twiddit-3f49"
+          image: "twiddit2.azurecr.io/twiddit"
+          ports:
+          - containerPort: 80
