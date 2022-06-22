@@ -65,7 +65,7 @@ spec:
     rules:
     - http:
         paths:
-        - path: /api/followers
+        - path: /api/followers/*
           pathType: Prefix
           backend:
             service:
