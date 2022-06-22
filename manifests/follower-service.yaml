@@ -72,3 +72,10 @@ spec:
                 name: "twiddit-3f49"
                 port:
                   number: 80
+        - path: /api/followers
+          pathType: Prefix
+          backend:
+            service:
+                name: "twiddit-3f49"
+                port:
+                  number: 80
